@@ -2,6 +2,14 @@
 
 //require_once 'Model.php';
 require_once (File::build_path(["model",'Model.php']));
+
+/**
+ * 
+ *      Seul le model "ModelUtilisateur" ainsi que la class "Model" seront commentés 
+ *      car il s'agit des mêmes méthodes/fonctions pour tous les modeles !
+ * 
+ */
+
 class ModelVoiture extends Model {
     
    protected static $obj = 'Voiture';

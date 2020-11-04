@@ -8,6 +8,9 @@ class Model {
     public static $pdo;
        // protected static $table = 'voiture';
 
+       /**
+        *   Méthode qui permet d'initaliser la connexion à la base de données avec les paramètres présents dans la fichier configuration.
+        */
     public static function init() {
         try {
             self::$pdo = new PDO('mysql:host=' . Conf::getHost() . ';dbname=' . Conf::getDataBase(), Conf::getLogin(), Conf::getPassword(), array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
@@ -23,6 +26,9 @@ class Model {
         }
     }
 
+    /**
+     *  Fonction qui retourne un table de tous les objets de la table précisé par un model qui hérite de Model()
+     */
     public static function selectAll() {
         $table_name = static::$obj;
         $class_name = "Model" . $table_name;
@@ -31,6 +37,9 @@ class Model {
         return $rep->fetchAll();
     }
 
+    /**
+     *  Fonction qui retourne un seul objet de la table précisé par l'enfant en fonction d'une seul clef primaire
+     */
     public static function select($key) {
 
         $table_name = static::$obj;
@@ -58,6 +67,9 @@ class Model {
         return $tab[0];
     }
 
+    /**
+     *  Méthode qui supprime un object d'une table en lui donnant une valeur de clef primaire
+     */
     public static function delete($key) {
 
         $table_name = static::$obj;
@@ -73,6 +85,9 @@ class Model {
         $req_prep->execute($value);
     }
 
+    /**
+     *  Méthode qui met à jour dans la table une occurence en fonction d'une valeur de clef primaire ainsi qu'un tableau de "attributs" => "valeur"
+     */
     public static function update($primary_key_value, $tab) {
         $tablee = static::$table;
         $primary_key_name = static::$primary_key;

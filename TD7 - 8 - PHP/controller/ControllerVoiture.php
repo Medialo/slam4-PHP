@@ -1,8 +1,15 @@
 <?php
 
 require_once (File::build_path(["model", 'ModelVoiture.php']));
-
 //require_once ('../model/ModelVoiture.php'); // chargement du mod�le
+
+/**
+ * 
+ *      Seul le controleur "ControllerUtilisateur" sera commenté 
+ *      car il s'agit des mêmes méthodes pour tous les controllers !
+ * 
+ */
+
 class ControllerVoiture {
 
     public static function readall() {
@@ -12,7 +19,6 @@ class ControllerVoiture {
         $view = 'list';
         $pagetitle = "Liste des voitures";
         require (File::build_path(["view", 'view.php']));
-
         //require ('../view/voiture/list.php'); //"redirige" vers la vue
     }
 
@@ -21,7 +27,6 @@ class ControllerVoiture {
             $i = $_GET['immat'];
         }
         // $v = ModelVoiture::getVoitureByImmat($i); //appel au mod�le pour gerer la BD
-
         $v = ModelVoiture::select($i); //appel au mod�le pour gerer la BD
         if ($v != null) {
             $controller = 'voiture';
@@ -40,7 +45,7 @@ class ControllerVoiture {
         $v = new ModelVoiture(null, null, null);
         $controller = 'voiture';
         $view = 'update';
-        $pagetitle = "Cr�ation d'une voiture";
+        $pagetitle = "Cr�ation d'une voiture";
         $action = "index.php?action=created";
 
         require (File::build_path(["view", 'view.php']));

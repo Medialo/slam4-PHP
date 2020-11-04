@@ -2,6 +2,13 @@
 require_once (File::build_path(["model",'ModelTrajet.php']));
 require_once (File::build_path(["model",'ModelUtilisateur.php']));
 
+/**
+ * 
+ *      Seul le controleur "ControllerUtilisateur" sera commenté 
+ *      car il s'agit des mêmes méthodes pour tous les controllers !
+ * 
+ */
+
 class ControllerTrajet {
 
     public static function readall() {
@@ -36,7 +43,7 @@ class ControllerTrajet {
           $v = new ModelTrajet();
         $controller='trajet';
         $view='update';
-        $pagetitle="Cr�ation d'un trajet";
+        $pagetitle="Cr�ation d'un trajet";
            $action = "index.php?action=created&controller=trajet";
         require (File::build_path(["view",'view.php']));
        

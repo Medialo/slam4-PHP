@@ -9,10 +9,17 @@
 
 
 <?php
+
+/**
+ * 
+ *  Class qui contient le tableau des paramétres de connexion pour la base de données
+ * 
+ */
 class Conf {
 
  static private $debug = True; 
     
+//    tableau qui contient tous les paramètres pour se connecter à la base de données
  static private $databases = array(
 
  'hostname' => 'localhost',
@@ -24,6 +31,9 @@ class Conf {
  'password' => ''
  );
 
+    
+// GETTER pour obtenir un paramètre précis du tableau précédent    
+    
  static public function getLogin() {
  //en PHP l'indice d'un tableau n'est pas forcement un chiffre.
  return self::$databases['login'];

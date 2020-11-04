@@ -1,4 +1,5 @@
 <?php
+// Fichier test des cookies PHP
 
 setcookie("TestCookie", "OK", time()+3600);
 
@@ -10,7 +11,7 @@ setcookie("TestCookie", "OK", time()-1);
 if($_COOKIE["TestCookie"]){
     echo $_COOKIE["TestCookie"];
 } else {
-    echo "le cookie à été mangé !";
+    echo "le cookie ï¿½ ï¿½tï¿½ mangï¿½ !";
 }
 
 
